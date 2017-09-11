@@ -1,0 +1,254 @@
+@import "reset",
+        "variables";
+
+
+// ======================================
+//  General
+// ======================================
+
+html {
+  font-size: 16px;
+}
+
+// ======================================
+//  Header
+// ======================================
+header {
+  background-color: #acb9c8;
+  @include background-img("../img/header-img-1.png");
+  @include center;
+  h1 {
+    margin-top: 94px;
+    width: px-to-deg(583); //583px;
+    color: $white;
+    font-family: Lato;
+    font-size: 3.375rem; //54px
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  p {
+    margin-top: 53px;
+    width: px-to-deg(573); //573px;
+    color: $white;
+    font-family: Lato;
+    font-size: 0.9375rem; //15px
+    font-weight: 400;
+    line-height: 29px;
+    text-transform: uppercase;
+  }
+  @media (max-width: $rot-tablet) {
+    h1 {
+      width: px-to-deg(583, $extension: 20);
+    }
+    p {
+      width: px-to-deg(573, $extension: 20);
+    }
+  }
+  @media (max-width: $tablet) {
+    h1 {
+      width: px-to-deg(583, $extension: 40);
+    }
+    p {
+      width: px-to-deg(573, $extension: 40);
+    }
+  }
+  @media (max-width: $mobile) {
+    h1 {
+      width: px-to-deg(583, $extension: 60);
+    }
+    p {
+      width: px-to-deg(573, $extension: 60);
+    }
+  }
+  .logo{
+    margin-top: 286px;
+  }
+  .arrow {
+    margin: 245px auto 115px;
+  }
+}
+
+// ======================================
+//  Section: First
+// ======================================
+.first-section {
+  background-color: $white;
+  @include center;
+  @include box(145,159);
+}
+
+// ======================================
+//  Section: second
+// ======================================
+
+.second-section {
+  background-color: #a1a8b8;
+  @include background-img("../img/section-2-1.png");
+  @include center;
+  @include box(115,109);
+  h2 {
+    border-radius: 10px;
+  }
+  p {
+    color: $white;
+  }
+  div {
+    border-color: $white;
+  }
+}
+
+// ======================================
+//  Section: Third
+// ======================================
+
+.third-section {
+  background-color: $white;
+  @include center;
+  @include box(105,114);
+  overflow: auto;
+  > div {
+    height: auto;
+    padding-bottom: 92px;
+    div {
+      img {
+        padding-top: 109px;
+      }
+      h3 {
+        font-family: Lato;
+        font-size: 1.25rem; //20px
+        font-weight: 700;
+        padding-top: 40px;
+      }
+      p {
+        padding: 42px 0 0;
+      }
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// ======================================
+//  Section: Four
+// ======================================
+
+
+.fourth-section {
+  background-color: #3c3c3c;
+  .container {
+    background-color: $white;
+    display: flex;
+    flex-wrap: wrap;
+    .box {
+      display: flex;
+      flex: 1 25.333%;
+      height: 200px;
+      margin: 2.5px;
+      @media (max-width: $tablet) {
+        margin: 2px;
+        flex: 1 40.333%;
+      }
+      @media (max-width: $mobile) {
+        margin: 0;
+        margin-bottom: 2px;
+        flex: 1 100%;
+      }
+      h2 {
+        font-family: Lato;
+        font-size: 2.125rem; //34px
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $white;
+        margin-left: 5%;
+        margin-top: auto;
+      }
+    }
+    .large {
+      background-color: aquamarine;
+      flex-grow: 4.5;
+    }
+  }
+}
+.one {
+  background-image: url("../img/section-4-1.png");
+}
+.two {
+  background-image: url("../img/section-4-2.png");
+  @media (max-width: $tablet) {
+    order: -1;
+  }
+}
+.three {
+  background-image: url("../img/section-4-3.png");
+}
+.four {
+  background-image: url("../img/section-4-4.png");
+}
+.five {
+  background-image: url("../img/section-4-5.png");
+}
+.six {
+  background-image: url("../img/section-4-6.png");
+}
+
+// ======================================
+//  Section: Fifth
+// ======================================
+.fifth-section {
+  background-color: $white;
+  @include center;
+  @include box(134,63);
+  p {
+    padding-bottom: 42px;
+  }
+  a {
+    font-family: Lato;
+    font-size: 1rem; //16px
+    font-weight: 400;
+    background-color: #3c3c3c;
+    display: inline-block;
+    padding: 20px px-to-deg(395,900,-21); //395 900
+    text-transform: uppercase;
+    transition: background-color .3s;
+    &:link {
+      color: $white;
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: lighten(#3c3c3c,20%);
+    }
+    &:visited {
+      color: $white;
+    }
+  }
+  div {
+    > div {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+// ======================================
+//  FOOTER
+// ======================================
+footer {
+  display: flex;
+  text-align: center;
+  overflow: auto;
+  justify-content: center;
+  margin-bottom: 65px;
+  div {
+    background-image: url("../img/logo-footer.png");
+    width: 35px;
+    height: 37px;
+  }
+  p {
+    padding-left: 36px;
+    margin: 10px 0 9px;
+    font-family: Lato;
+    font-size: 0.875rem; //14px;
+    font-weight: 400;
+  }
+}

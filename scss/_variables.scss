@@ -1,0 +1,76 @@
+
+// ======================================
+//  Proms
+// ======================================
+$white: #ffffff;
+$mobile: 576px;
+$tablet: 768px;
+$rot-tablet: 906px;
+
+
+// ======================================
+//  FUNCTIONS
+// ======================================
+@function px-to-deg($px, $size: 1920, $extension: 10){
+  @return #{($extension +($px / $size) * 100%)};
+}
+
+// ======================================
+//  Mixins
+// ======================================
+
+@mixin background-img($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin center {
+  text-align: center;
+  * {
+    margin: auto;
+  }
+}
+
+@mixin box($top,$bottom) {
+  padding-top: #{$top}px;
+  padding-bottom: #{$bottom}px;
+  h2 {
+    font-family: Lato;
+    font-size: 2.25rem; //34px;
+    font-weight: 700;
+    background-color: white;
+    z-index: 999;
+    position: relative;
+    display: inline-block;
+    padding: 0 px-to-deg(117,900,-5); //117 900 Resposive potreba upravit
+    text-transform: uppercase;
+  }
+  p {
+    font-family: Lato;
+    font-size: 1rem;
+    font-weight: 300;
+    padding-top: 64px;
+    padding-bottom: 53px;
+  }
+  > div {
+    margin-top: -20px;
+    width: px-to-deg(902);
+    @media (max-width: $rot-tablet) {
+      width: px-to-deg(902, $extension: 15);
+    }
+    @media (max-width: $tablet) {
+      width: px-to-deg(902, $extension: 30);
+    }
+    @media (max-width: $mobile) {
+      width: px-to-deg(902, $extension: 50);
+    }
+    border: 2px solid #3c3c3c;
+    div {
+      //background-color: silver;
+      width: px-to-deg(522,902);
+      overflow: auto;
+    }
+  }
+}
